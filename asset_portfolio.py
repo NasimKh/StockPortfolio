@@ -27,6 +27,7 @@ class AssetPortfolio(object):
 
     @property
     def get_currency_in_portfolio(self):
+        """creates the portfolio unique currencies"""
         lst=[]
         for s in self.portfolio:
             lst.append(s.currency) if s.currency not in lst else lst
@@ -78,7 +79,8 @@ class AssetPortfolio(object):
 
     @property
     def average_stock(self):
-        'Creating a df from the stocks'
+        """Creating one average stock from the stocks of similiar company'
+        """
         df = pd.DataFrame(columns = ['symbol','shares', 'price','currency'])
         i= 0
         for s in self.portfolio:
